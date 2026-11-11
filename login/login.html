@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SquadFinder - Bejelentkezés</title>
+</head>
+
+<body>
+    <header class="navbar">
+        <h1 class="title">
+            <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://w3.org">
+                <path d="M 50,15 L 76,28 L 76,55 L 66,74 L 50,85 L 34,74 L 24,55 L 24,28 Z" fill="none" stroke="#2563eb"
+                    stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M 50,22 L 70,32 L 70,52 L 62,66 L 50,75 L 38,66 L 30,52 L 30,32 Z" fill="#000e2c"
+                    stroke="#3b82f6" stroke-width="2" stroke-linejoin="round" />
+                <path d="M 34,44 L 46,48 L 44,52 L 34,47 Z" fill="#60a5fa" />
+                <path d="M 66,44 L 54,48 L 56,52 L 66,47 Z" fill="#60a5fa" />
+                <path d="M 34,74 L 24,84 L 16,80" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M 66,74 L 76,84 L 84,80" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M 50,15 L 50,5" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" />
+            </svg>
+            Squad<span class="bluu">Finder</span>
+        </h1>
+    </header>
+
+     <section class="auth-page-container">
+        <div class="auth-card">
+            <h2>Üdvözlünk újra!</h2>
+            <p class="auth-subtitle">Jelentkezz be a fiókodba a folytatáshoz.</p>
+
+            <form class="auth-form" id="login-form">
+                <div class="auth-form-group">
+                    <label for="login-username">Felhasználónév</label>
+                    <input type="text" id="login-username" required placeholder="Add meg a neved...">
+                </div>
+
+                <div class="auth-form-group">
+                    <label for="login-password">Jelszó</label>
+                    <input type="password" id="login-password" required placeholder="Írd be a jelszavad...">
+                </div>
+                
+                <div id="login-error-message" class="auth-error-text"></div>
+                <button type="submit" class="btn-submit-auth">Bejelentkezés</button>
+
+                <div class="auth-footer-text">
+                    Még nincs fiókod? <a href="register.html">Regisztrálj itt</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <p class="footer-brand">SquadFinder © 2026</p>
+                <p class="footer-copy">Minden jog fenntartva.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="auth.js"></script>
+</body>
+
+</html>

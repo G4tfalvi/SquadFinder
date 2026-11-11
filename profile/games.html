@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="stylesheet" href="games.css">
+    <title>SquadFinder - Játékok</title>
+</head>
+
+<body>
+    <header class="navbar">
+        <h1 class="title">
+            <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://w3.org">
+                <path d="M 50,15 L 76,28 L 76,55 L 66,74 L 50,85 L 34,74 L 24,55 L 24,28 Z" fill="none" stroke="#2563eb"
+                    stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M 50,22 L 70,32 L 70,52 L 62,66 L 50,75 L 38,66 L 30,52 L 30,32 Z" fill="#000e2c"
+                    stroke="#3b82f6" stroke-width="2" stroke-linejoin="round" />
+                <path d="M 34,44 L 46,48 L 44,52 L 34,47 Z" fill="#60a5fa" />
+                <path d="M 66,44 L 54,48 L 56,52 L 66,47 Z" fill="#60a5fa" />
+                <path d="M 34,74 L 24,84 L 16,80" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M 66,74 L 76,84 L 84,80" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M 50,15 L 50,5" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" />
+            </svg>
+            Squad<span class="bluu">Finder</span>
+        </h1>
+
+        <nav class="nav-links">
+            <a href="../home.html">Kezdőlap</a>
+            <a href="games.html" class="active">Játékok</a>
+            <a href="dm.html">Dm</a>
+        </nav>
+
+        <div class="nav-auth">
+            <div id="nav-guest-zone" style="display: flex; gap: 10px;">
+                <a href="login/login.html">
+                    <button class="btn-login">Bejelentkezés</button>
+                </a>
+                <a href="login/register.html">
+                    <button class="btn-register">Regisztráció</button>
+                </a>
+            </div>
+
+            <div id="nav-user-zone" style="display: none;">
+                <a href="profile.html">
+                    <button class="btn-profile">Profilom</button>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="games-page-section">
+        <div class="games-page-header">
+            <h2>Támogatott Játékok</h2>
+            <p>Válaszd ki a kedvenc játékod és találj csapattársakat másodpercek alatt.</p>
+        </div>
+
+        <div class="games-search-container">
+            <div class="search-input-wrapper">
+                <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" x2="16.65" y1="21" y2="16.65" />
+                </svg>
+                <input type="text" id="library-search" placeholder="Játék keresése...">
+            </div>
+        </div>
+
+        <div class="games-library-grid">
+            <div class="game-library-card">
+                <div class="game-cover-wrapper">
+                    <div class="game-cover-overlay"></div>
+                    <div class="library-logo-badge val-border"><img src="../assets/valorant.png" alt="Valorant"></div>
+                </div>
+                <div class="game-library-info">
+                    <h3>Valorant</h3>
+                    <p>5v5 taktikai lövöldözős játék, ahol a precíz célzás és az egyedi karakterképességek döntenek.</p>
+                    <div class="library-card-bottom">
+                        <span class="active-count">● 1,205 keresgél</span>
+                        <button class="btn-select-game">Lobbik megnyitása</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-library-card">
+                <div class="game-cover-wrapper">
+                    <div class="game-cover-overlay"></div>
+                    <div class="library-logo-badge cs2-border"><img src="../assets/cs2.png" alt="CS2"></div>
+                </div>
+                <div class="game-library-info">
+                    <h3>Counter-Strike 2</h3>
+                    <p>A világ első számú taktikai FPS játékának legújabb, felújított verziója megújult grafikával.</p>
+                    <div class="library-card-bottom">
+                        <span class="active-count">● 842 keresgél</span>
+                        <button class="btn-select-game">Lobbik megnyitása</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-library-card">
+                <div class="game-cover-wrapper">
+                    <div class="game-cover-overlay"></div>
+                    <div class="library-logo-badge mc-border"><img src="../assets/minecraft.png" alt="Minecraft"></div>
+                </div>
+                <div class="game-library-info">
+                    <h3>Minecraft</h3>
+                    <p>Építs, bányássz és élj túl a végtelen kockavilágban egyedül vagy a barátaiddal közösen.</p>
+                    <div class="library-card-bottom">
+                        <span class="active-count">● 954 keresgél</span>
+                        <button class="btn-select-game">Lobbik megnyitása</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-library-card">
+                <div class="game-cover-wrapper">
+                    <div class="game-cover-overlay"></div>
+                    <div class="library-logo-badge lol-border"><img src="../assets/lol.png" alt="LoL"></div>
+                </div>
+                <div class="game-library-info">
+                    <h3>League of Legends</h3>
+                    <p>Pörgős, kompetitív MOBA játék, ahol két 5 fős csapat csap össze az ellenfél bázisának
+                        elpusztításáért.</p>
+                    <div class="library-card-bottom">
+                        <span class="active-count">● 1,240 keresgél</span>
+                        <button class="btn-select-game">Lobbik megnyitása</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <p class="footer-brand">SquadFinder © 2026</p>
+                <p class="footer-copy">Minden jog fenntartva.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="games.js"></script>
+    <div id="toast-notification-box" class="global-notification-toast"></div>
+</body>
+
+</html>

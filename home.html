@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>SquadFinder - Home</title>
+</head>
+
+<body>
+    <header class="navbar">
+        <h1 class="title">
+            <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://w3.org">
+                <path d="M 50,15 L 76,28 L 76,55 L 66,74 L 50,85 L 34,74 L 24,55 L 24,28 Z" fill="none" stroke="#2563eb"
+                    stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M 50,22 L 70,32 L 70,52 L 62,66 L 50,75 L 38,66 L 30,52 L 30,32 Z" fill="#000e2c"
+                    stroke="#3b82f6" stroke-width="2" stroke-linejoin="round" />
+                <path d="M 34,44 L 46,48 L 44,52 L 34,47 Z" fill="#60a5fa" />
+                <path d="M 66,44 L 54,48 L 56,52 L 66,47 Z" fill="#60a5fa" />
+                <path d="M 34,74 L 24,84 L 16,80" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M 66,74 L 76,84 L 84,80" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M 50,15 L 50,5" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" />
+            </svg>
+            Squad<span class="lent">Finder</span>
+        </h1>
+
+        <nav class="nav-links">
+            <a href="home.html" class="active">Kezdőlap</a>
+            <a href="profile/games.html">Játékok</a>
+            <a href="profile/dm.html">Dm</a>
+        </nav>
+
+        <div class="nav-auth">
+            <div id="nav-guest-zone" style="display: flex; gap: 10px;">
+                <a href="login/login.html">
+                    <button class="btn-login">Bejelentkezés</button>
+                </a>
+                <a href="login/register.html">
+                    <button class="btn-register">Regisztráció</button>
+                </a>
+            </div>
+
+            <div id="nav-user-zone" style="display: none;">
+                <a href="profile/profile.html">
+                    <button class="btn-profile">Profilom</button>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="header">
+        <div class="hero-left">
+            <h1 class="hero-title">
+                <span class="fent">Találj</span> csapattársakat.<br>
+                <span class="lent">Játssz</span> másokkal. Nyerjétek meg.
+            </h1>
+
+            <p class="hero-text">
+                Csatlakozz magyar játékosok ezreihez és találj <br>
+                megbízható csapattársakat kedvenc játékaidhoz.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#gyors-kereso">
+                    <button class="btn-search"><svg class="btn-icon" xmlns="http://w3.org" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                            <circle cx="12" cy="7" r="4" />
+                        </svg>Játékost keresek</button>
+                </a>
+                <a href="profile/profile.html">
+                    <button class="btn-create"><svg class="btn-icon" xmlns="http://w3.org" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <line x1="19" x2="19" y1="8" y2="14" />
+                            <line x1="16" x2="22" y1="11" y2="11" />
+                        </svg>Profil létrehozása</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <div class="supported-games-box">
+                <div class="games-box-header">
+                    <h4>Támogatott játékok</h4>
+                </div>
+
+                <div class="games-ticker-window">
+                    <div class="games-ticker-track">
+                        <div class="game-logo-card valorant">
+                            <img src="assets/valorant.png" alt="Valorant" class="game-png-img">
+                        </div>
+
+                        <div class="game-logo-card cs2">
+                            <img src="assets/cs2.png" alt="CS2" class="game-png-img">
+                        </div>
+
+                        <div class="game-logo-card mc">
+                            <img src="assets/minecraft.png" alt="Minecraft" class="game-png-img">
+                        </div>
+
+                        <div class="game-logo-card lol">
+                            <img src="assets/lol.png" alt="LoL" class="game-png-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="online-section">
+        <div class="online-players-box">
+            <div class="box-header">
+                <h2 class="box-title">Online játékosok <span class="live-dot">● Élő</span></h2>
+            </div>
+            <div class="online-players-grid-class" id="online-players-grid"></div>
+        </div>
+
+        <!-- JOBB OLDAL: Kereső űrlap -->
+        <div class="quick-search-box">
+            <h2 class="box-title" id="gyors-kereso">Játékos keresés</h2>
+            <form class="search-form" id="main-search-form">
+                <div class="search-game">
+                    <div class="form-group">
+                        <label>Játék</label>
+                        <select id="game-select">
+                            <option value="">Válassz játékot</option>
+                            <option value="Valorant">Valorant</option>
+                            <option value="Counter-Strike 2">Counter-Strike 2</option>
+                            <option value="League of Legends">League of Legends</option>
+                            <option value="Minecraft">Minecraft</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Rang</label>
+                        <select id="rank-select" disabled>
+                            <option value="">Előbb válassz játékot</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="search-nyelv form-group">
+                    <label>Nyelv</label>
+                    <select id="nyelv-select">
+                        <option value="Magyar">Magyar</option>
+                        <option value="English">English</option>
+                    </select>
+                </div>
+
+                <button type="button" class="btn-submit-search" id="btn-main-search">Keresés</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-icon-wrapper ico-players">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 12a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm-5.5-.5a2.5 2.5 0 1 0-2.5-2.5 2.5 2.5 0 0 0 2.5 2.5Zm11 0a2.5 2.5 0 1 0-2.5-2.5 2.5 2.5 0 0 0 2.5 2.5ZM12 14c-3.33 0-10 1.67-10 5v2h20v-2c0-3.33-6.67-5-10-5Zm-6.5 1.5a6.62 6.62 0 0 0-2.23.47 4.29 4.29 0 0 1 .73 2.53v1.5h1.5v-1c0-1.6.81-3.05 2.14-3.92a6.83 6.83 0 0 0-2.14-.58Zm11 0a6.83 6.83 0 0 0-2.14.58c1.33.87 2.14 2.32 2.14 3.92v1h1.5v-1.5a4.29 4.29 0 0 1 .73-2.53 6.62 6.62 0 0 0-2.23-.47Z" />
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <h3>250+</h3>
+                    <p>Játékos</p>
+                </div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon-wrapper ico-online">
+                    <span class="pulse-green"></span>
+                </div>
+                <div class="stat-info">
+                    <h3>85</h3>
+                    <p>Jelenleg online</p>
+                </div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon-wrapper ico-games">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M21 6H3a3 3 0 0 0-3 3v6a3 3 0 0 0 3 3h18a3 3 0 0 0 3-3V9a3 3 0 0 0-3-3Zm-12 7H7v2H5v-2H3v-2h2V9h2v2h2Zm5.5 1.5a1 1 0 1 1 1-1 1 1 0 0 1-1 1Zm3-2.5a1 1 0 1 1 1-1 1 1 0 0 1-1 1Z" />
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <h3>7</h3>
+                    <p>Támogatott játék</p>
+                </div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon-wrapper ico-teams">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M19 2H5a2 2 0 0 0-2 2v3a4 4 0 0 0 4 4h1a5.93 5.93 0 0 0 3.31 5.3A3 3 0 0 0 9 18v2H5v2h14v-2h-4v-2a3 3 0 0 0-2.31-2.7A5.93 5.93 0 0 0 16 11h1a4 4 0 0 0 4-4V4a2 2 0 0 0-2-2ZM5 7V4h1v3a2 2 0 0 1-2 2 2 2 0 0 1 1-2Zm14 0a2 2 0 0 1-2-2V4h1v3a2 2 0 0 1 1 2 2 2 0 0 1-2-2Z" />
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <h3>120</h3>
+                    <p>Létrehozott csapat</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works-section">
+        <div class="hiw-container">
+            <h2 class="hiw-title">Hogyan működik?</h2>
+            <div class="hiw-grid">
+                <div class="hiw-card">
+                    <div class="hiw-left-side">
+                        <div class="hiw-step-num">1</div>
+                        <div class="hiw-text-content">
+                            <h3>Regisztrálj</h3>
+                            <p>Hozz létre egy ingyenes fiókot.</p>
+                        </div>
+                    </div>
+                    <div class="hiw-icon neon-glow-blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                            <circle cx="12" cy="7" r="4" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="hiw-card">
+                    <div class="hiw-left-side">
+                        <div class="hiw-step-num">2</div>
+                        <div class="hiw-text-content">
+                            <h3>Töltsd ki profilod</h3>
+                            <p>Add meg játékaid és rangod.</p>
+                        </div>
+                    </div>
+                    <div class="hiw-icon neon-glow-blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 20h9" />
+                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="hiw-card">
+                    <div class="hiw-left-side">
+                        <div class="hiw-step-num">3</div>
+                        <div class="hiw-text-content">
+                            <h3>Találj csapattársat</h3>
+                            <p>Játsszatok együtt!</p>
+                        </div>
+                    </div>
+                    <div class="hiw-icon neon-glow-blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="custom-alert-modal" class="modal-overlay">
+        <div class="modal-card">
+            <h3 id="custom-alert-text">Üzenet szövege</h3>
+            <div class="modal-actions">
+                <button type="button" id="custom-alert-ok-btn" class="btn-modal-secondary">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <p class="footer-brand">SquadFinder © 2026</p>
+                <p class="footer-copy">Minden jog fenntartva.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="home-search.js"></script>
+    <div id="toast-notification-box" class="global-notification-toast"></div>
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="stylesheet" href="dm.css">
+    <title>SquadFinder - Direkt Üzenetek</title>
+</head>
+
+<body>
+    <header class="navbar">
+        <h1 class="title">
+            <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://w3.org">
+                <path d="M 50,15 L 76,28 L 76,55 L 66,74 L 50,85 L 34,74 L 24,55 L 24,28 Z" fill="none" stroke="#2563eb"
+                    stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M 50,22 L 70,32 L 70,52 L 62,66 L 50,75 L 38,66 L 30,52 L 30,32 Z" fill="#000e2c"
+                    stroke="#3b82f6" stroke-width="2" stroke-linejoin="round" />
+                <path d="M 34,44 L 46,48 L 44,52 L 34,47 Z" fill="#60a5fa" />
+                <path d="M 66,44 L 54,48 L 56,52 L 66,47 Z" fill="#60a5fa" />
+                <path d="M 34,74 L 24,84 L 16,80" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M 66,74 L 76,84 L 84,80" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M 50,15 L 50,5" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" />
+            </svg>
+            Squad<span class="bluu">Finder</span>
+        </h1>
+
+        <nav class="nav-links">
+            <a href="../home.html">Kezdőlap</a>
+            <a href="games.html">Játékok</a>
+            <a href="dm.html" class="active">Dm</a>
+        </nav>
+
+        <div class="nav-auth">
+            <div id="nav-guest-zone" style="display: flex; gap: 10px;">
+                <a href="login/login.html">
+                    <button class="btn-login">Bejelentkezés</button>
+                </a>
+                <a href="login/register.html">
+                    <button class="btn-register">Regisztráció</button>
+                </a>
+            </div>
+
+            <div id="nav-user-zone" style="display: none;">
+                <a href="profile.html">
+                    <button class="btn-profile">Profilom</button>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="friends-page-section">
+        <div class="friends-layout">
+
+            <div class="friends-sidebar">
+                <div class="sidebar-header">
+                    <h2>Barátok</h2>
+                </div>
+
+                <div class="add-friend-zone">
+                    <form class="add-friend-form" id="add-friend-form">
+                        <input type="text" id="add-friend-username" required placeholder="Barát felhasználóneve...">
+                        <button type="submit" class="btn-add-friend-submit">+</button>
+                    </form>
+                </div>
+
+                <div class="friend-search-zone">
+                    <div class="f-search-wrapper">
+                        <svg class="f-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" x2="16.65" y1="21" y2="16.65" />
+                        </svg>
+                        <input type="text" id="friend-list-search" placeholder="Keresés a barátok között...">
+                    </div>
+                </div>
+
+                <div class="friends-list-wrapper" id="friends-list-container">
+                    <div class="list-section-title">Online</div>
+                    <div id="online-friends-sublist"></div>
+
+                    <div class="list-section-title">Offline</div>
+                    <div id="offline-friends-sublist"></div>
+                </div>
+
+                <div class="user-own-profile-bar">
+                    <div class="own-avatar-box">
+                        <div class="own-avatar-placeholder">ME</div>
+                        <span class="dot-online" id="own-status-dot" style="cursor: pointer;"></span>
+                    </div>
+                    <div class="own-info-box">
+                        <h4>Saját Profilom</h4>
+                        <p id="own-status-text">Online</p>
+                    </div>
+                    <div class="own-actions-box">
+                        <button type="button" class="btn-own-settings">⚙️</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-main-window" id="chat-window-wrapper">
+                <div class="chat-empty-state" id="chat-empty-state">
+                    <p>Nincs kijelölt beszélgetés. Válassz ki egy barátot a csevegő indításához!</p>
+                </div>
+
+                <div class="chat-active-state" id="chat-active-state"
+                    style="display: none; flex-direction: column; height: 100%;">
+                    <div class="chat-header-bar">
+                        <div class="chat-user-status">
+                            <h3 id="active-chat-username">Felhasználó</h3>
+                            <span class="chat-status-text" id="active-chat-status">● Online</span>
+                        </div>
+                        <div class="chat-header-actions">
+                            <a class="chat-a" href="#chat-empty-state">
+                                <button type="button" class="btn-chat-icon-action act-delete" id="btn-close-chat">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="chat-messages-body" id="chat-messages-container"></div>
+
+                    <div class="chat-input-footer">
+                        <form class="chat-send-form">
+                            <input type="text" placeholder="Írj egy üzenetet..." class="input-chat-text">
+                            <button type="submit" class="btn-send-message">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="22" y1="2" x2="11" y2="13" />
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="custom-confirm-modal" class="modal-overlay">
+        <div class="modal-card">
+            <h3>Biztosan törölni szeretnéd ezt a barátot?</h3>
+            <div class="modal-actions">
+                <button type="button" id="modal-confirm-btn" class="btn-modal-danger">Igen</button>
+                <button type="button" id="modal-cancel-btn" class="btn-modal-secondary">Nem</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="custom-alert-modal" class="modal-overlay">
+        <div class="modal-card">
+            <h3 id="custom-alert-text">Üzenet szövege</h3>
+            <div class="modal-actions">
+                <button type="button" id="custom-alert-ok-btn" class="btn-modal-secondary">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <p class="footer-brand">SquadFinder © 2026</p>
+                <p class="footer-copy">Minden jog fenntartva.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="dm.js"></script>
+    <div id="toast-notification-box" class="global-notification-toast"></div>
+</body>
+
+</html>
